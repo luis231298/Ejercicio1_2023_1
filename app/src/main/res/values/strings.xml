@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Ejercicio1_2023_1</string>
+    <string name="formulario">Formulario</string>
+    <string name="instrucciones">Ingrese los datos correspondientes según el campo:</string>
+    <string name="nombre">Nombre:</string>
+    <string name="nombre_completo">Nombre Completo</string>
+    <string name="fecha">Fecha:</string>
+    <string name="numero_cuenta">Número de cuenta:</string>
+    <string name="numero_cuenta2">Número de cuenta</string>
+    <string name="correo_electronico2">Correo Electrónico</string>
+    <string name="correo_electronico">Correo Electrónico:</string>
+    <string name="validar">Validar</string>
 </resources>
