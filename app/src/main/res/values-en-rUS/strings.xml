@@ -23,4 +23,5 @@
     <string name="txtCorreo1">Your email is:</string>
     <string name="edadtxt">Your age is:</string>
     <string name="signoTxt">Your sign is:</string>
+    <string name="Instruct2">Enter your date by pressing the calendar:</string>
 </resources>

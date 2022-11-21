@@ -159,6 +159,15 @@ class MainActivity : AppCompatActivity() {
 
         val edad = fecha2[0].toInt() - fecha1[2].toInt()
 
+        /*val mes = fecha2[2]
+        val dia = fecha2[0]
+
+        Toast.makeText(this@MainActivity,mes.toString(),Toast.LENGTH_LONG).show()
+        Toast.makeText(this@MainActivity,dia.toString(),Toast.LENGTH_LONG).show()
+
+        parametros.putString("Mes", mes)
+        parametros.putInt("Dia", dia.toInt())*/
+
         parametros.putString("Edad", edad.toString())
 
         //Toast.makeText(this@MainActivity,edad.toString(),Toast.LENGTH_LONG).show()

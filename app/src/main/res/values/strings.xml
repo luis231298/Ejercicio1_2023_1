@@ -22,4 +22,5 @@
     <string name="txtCorreo1">Tu correo es:</string>
     <string name="edadtxt">Tu edad es:</string>
     <string name="signoTxt">Tu signo es:</string>
+    <string name="Instruct2">Ingrese su fecha presionando el calendario:</string>
 </resources>
