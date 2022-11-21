@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.util.PatternsCompat
@@ -17,6 +18,7 @@ import java.time.Instant
 class MainActivity : AppCompatActivity() {
 
     var txtFecha:EditText?=null
+    var txtFecha2:TextView?=null
     var btnFecha:ImageButton?=null
     var dpFecha:DatePicker?=null
 
@@ -36,14 +38,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         txtFecha = binding.txtFecha
+        txtFecha2 = binding.txtFecha2
         btnFecha = binding.btnFecha
         dpFecha = binding.dpFecha
 
         txtFecha?.setText(getDataPicker())
+        txtFecha2?.setText(getDataPicker())
 
         dpFecha?.setOnDateChangedListener {
             dpFecha,anio,mes,dia ->
             txtFecha?.setText(getDataPicker())
+            txtFecha2?.setText(getDataPicker())
             dpFecha?.visibility=View.GONE
         }
 
