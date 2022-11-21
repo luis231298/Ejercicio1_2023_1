@@ -2,6 +2,7 @@ package com.example.ejercicio1_2023_1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.ejercicio1_2023_1.databinding.ActivityMainBinding
@@ -17,6 +18,7 @@ class Resultado : AppCompatActivity() {
     var txtCorreo: TextView?=null
     var txtEdad: TextView?=null
     var txtSigno: TextView?=null
+    var imgvSigno: ImageView?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +51,7 @@ class Resultado : AppCompatActivity() {
         txtEdad = binding.txtEdad2
         txtSigno = binding.txtSigno2
 
+
         //txtPres?.setText(R.string.Saludo)
         txtNombre?.setText(nombre)
         txtCorreo?.setText(correo)
@@ -57,88 +60,113 @@ class Resultado : AppCompatActivity() {
     }
 
     fun horozcopo(mes:String, dia: Int):String{
+        imgvSigno = binding.imgvSigno
         when (mes) {
             "01" -> {//Enero
                 if (dia <= 20){
+                    imgvSigno?.setImageResource(R.drawable.capricornio)
                     return "Capricornio"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.acuario)
                     return "Acuario"
                 }
             }
             "02" -> {//Febrero
                 if (dia <= 19){
+                    imgvSigno?.setImageResource(R.drawable.acuario)
                     return "Acuario"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.piscis)
                     return "Piscis"
                 }
             }
             "03" -> {//Marzo
                 if (dia <= 20){
+                    imgvSigno?.setImageResource(R.drawable.piscis)
                     return "Piscis"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.aries)
                     return "Aries"
                 }
             }
             "04" -> {//Abril
                 if (dia <= 20){
+                    imgvSigno?.setImageResource(R.drawable.aries)
                     return "Aries"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.tauro)
                     return "Tauro"
                 }
             }
             "05" -> {//Mayo
                 if (dia <= 20){
+                    imgvSigno?.setImageResource(R.drawable.tauro)
                     return "Tauro"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.geminis)
                     return "Geminis"
                 }
             }
             "06" -> {//Junio
                 if (dia <= 20){
+                    imgvSigno?.setImageResource(R.drawable.geminis)
                     return "Geminis"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.cancer)
                     return "Cancer"
                 }
             }
             "07" -> {//Julio
                 if (dia <= 20){
+                    imgvSigno?.setImageResource(R.drawable.cancer)
                     return "Cancer"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.leo)
                     return "Leo"
                 }
             }
             "08" -> {//Agosto
                 if (dia <= 21){
+                    imgvSigno?.setImageResource(R.drawable.leo)
                     return "Leo"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.virgo)
                     return "Virgo"
                 }
             }
             "09" -> {//Septiembre
                 if (dia <= 20){
+                    imgvSigno?.setImageResource(R.drawable.virgo)
                     return "Virgo"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.libra)
                     return "Libra"
                 }
             }
             "10" -> {//Octubre
                 if (dia <= 20){
+                    imgvSigno?.setImageResource(R.drawable.libra)
                     return "Libra"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.escorpio)
                     return "Escorpio"
                 }
             }
             "11" -> {//NOviembre
                 if (dia <= 22){
+                    imgvSigno?.setImageResource(R.drawable.escorpio)
                     return "Escorpio"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.sagitario)
                     return "Sagitario"
                 }
             }
             "12" -> {
                 if (dia <= 21){
+                    imgvSigno?.setImageResource(R.drawable.sagitario)
                     return "Sagitario"
                 }else{
+                    imgvSigno?.setImageResource(R.drawable.capricornio)
                     return "Capricornio"
                 }
             }
