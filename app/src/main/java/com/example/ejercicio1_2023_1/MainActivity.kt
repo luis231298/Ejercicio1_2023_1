@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         if (binding.ETNombre.text.isNotEmpty()){
             val nombre = binding.ETNombre.text.toString()
-            Toast.makeText(this@MainActivity,"Campo de nombre correcto",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity,"Campo de nombre correcto",Toast.LENGTH_SHORT).show()
             validacionName = true
         }
         else{
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         if (binding.etnNoDeCuenta.text.isNotEmpty()){
             val numeroCuenta = binding.etnNoDeCuenta.text.toString()
             if (noCuenta(numeroCuenta)) {
-                Toast.makeText(this@MainActivity,"No de cuenta valido",Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@MainActivity,"No de cuenta valido",Toast.LENGTH_SHORT).show()
                 validacionNoCuenta = true
             }
         }
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         if (binding.ETCorreo.text.isNotEmpty()){
             val correo = binding.ETCorreo.text.toString()
             if (Correo(correo)){
-                Toast.makeText(this@MainActivity,"Correo valido",Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@MainActivity,"Correo valido",Toast.LENGTH_SHORT).show()
                 validacionCorreo = true
             }
         }
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (Fecha()){
-            Toast.makeText(this@MainActivity,"Fecha Correcta", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity,"Fecha Correcta", Toast.LENGTH_SHORT).show()
             validacionFecha = true
         }else{
             Toast.makeText(this@MainActivity,"Fecha Incorrecta", Toast.LENGTH_SHORT).show()
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             parametros.putString("Fecha", binding.txtFecha.text.toString())
 
             intent.putExtras(parametros)
-
+            Toast.makeText(this@MainActivity, "Validacion correcta",Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }
 
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
     //funcion encargada de comprobar los valores del no. de cuenta
     fun noCuenta(numero: String): Boolean{
         if(numero.length == 9){
-            Toast.makeText(this@MainActivity, "El número de cuenta valido",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity, "El número de cuenta valido",Toast.LENGTH_SHORT).show()
             return true
         }
         else {
@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
 
     fun Correo(correo: String): Boolean{
         if (PatternsCompat.EMAIL_ADDRESS.matcher(correo).matches()){
-            Toast.makeText(this@MainActivity,"Correo valido",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity,"Correo valido",Toast.LENGTH_SHORT).show()
             return true
         }
         else {
@@ -177,6 +177,10 @@ class MainActivity : AppCompatActivity() {
         var dia = dpFecha?.dayOfMonth.toString().padStart(2,'0')
         var mes = (dpFecha!!.month+1).toString().padStart(2,'0')
         var anio = dpFecha?.year.toString().padStart(4,'0')
+
+        parametros.putString("Mes", mes)
+        parametros.putInt("Dia", dia.toInt())
+
         return dia+"-"+mes+"-"+anio
     }
 

@@ -82,4 +82,30 @@
         app:layout_constraintHorizontal_bias="0.435"
         app:layout_constraintStart_toEndOf="@+id/txtEdad"
         app:layout_constraintTop_toBottomOf="@+id/txtCorreo2" />
+
+    <TextView
+        android:id="@+id/txtSigno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/signoTxt"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEdad" />
+
+    <TextView
+        android:id="@+id/txtSigno2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="104dp"
+        android:text="@string/Calendario"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtSigno"
+        app:layout_constraintTop_toBottomOf="@+id/txtEdad2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
