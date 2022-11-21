@@ -17,7 +17,7 @@ import java.time.Instant
 
 class MainActivity : AppCompatActivity() {
 
-    var txtFecha:EditText?=null
+    //var txtFecha:EditText?=null
     var txtFecha2:TextView?=null
     var btnFecha:ImageButton?=null
     var dpFecha:DatePicker?=null
@@ -37,17 +37,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        txtFecha = binding.txtFecha
+        //txtFecha = binding.txtFecha
         txtFecha2 = binding.txtFecha2
         btnFecha = binding.btnFecha
         dpFecha = binding.dpFecha
 
-        txtFecha?.setText(getDataPicker())
+        //txtFecha?.setText(getDataPicker())
         txtFecha2?.setText(getDataPicker())
 
         dpFecha?.setOnDateChangedListener {
             dpFecha,anio,mes,dia ->
-            txtFecha?.setText(getDataPicker())
+            //txtFecha?.setText(getDataPicker())
             txtFecha2?.setText(getDataPicker())
             dpFecha?.visibility=View.GONE
         }
@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
             parametros.putString("Nombre",binding.ETNombre.text.toString())
             parametros.putString("Correo",binding.ETCorreo.text.toString())
             parametros.putString("noCuenta", binding.etnNoDeCuenta.text.toString())
-            parametros.putString("Fecha", binding.txtFecha.text.toString())
+            parametros.putString("Fecha", binding.txtFecha2.text.toString())
 
             intent.putExtras(parametros)
             Toast.makeText(this@MainActivity, "Validacion correcta",Toast.LENGTH_SHORT).show()
@@ -160,7 +160,7 @@ class MainActivity : AppCompatActivity() {
         val time2 = horaActual.split(delimit)
         val fecha2 = time2[0].split(delim)
 
-        val fecha1 = txtFecha?.text.toString().split(delim)
+        val fecha1 = txtFecha2?.text.toString().split(delim)
 
         val edad = fecha2[0].toInt() - fecha1[2].toInt()
 
