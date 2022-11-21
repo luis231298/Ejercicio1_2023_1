@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ejercicio1_2023_1</string>
+    <string name="nombre">Name:</string>
+    <string name="fecha">Date</string>
+    <string name="correo_electronico2">Email</string>
+    <string name="correo_electronico">Email:</string>
+    <string name="formulario">Form</string>
+    <string name="instrucciones">Enter the corresponding data according to the field:</string>
+    <string name="nombre_completo">Complete name</string>
+    <string name="numero_cuenta">Account number:</string>
+    <string name="numero_cuenta2">Account number</string>
+    <string name="validar">Validate</string>
+    <string name="seleccion_de_fecha">Date selection</string>
+    <string name="Calendario">Calendar</string>
+    <string name="nombreError">Empty name field</string>
+    <string name="numero_cuentaError">Empty account number field</string>
+    <string name="numero_cuentaError2">9 digits are required for the account number</string>
+    <string name="fechaError">We are not in that year yet</string>
+    <string name="correo_electronicoError">Empty mail field</string>
+    <string name="correo_electronicoError2">Invalid email</string>
+    <string name="Saludo">Hello!!!</string>
+    <string name="txtCorreo1">Your email is:</string>
+    <string name="edadtxt">Your age is:</string>
+</resources>

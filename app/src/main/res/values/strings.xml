@@ -11,5 +11,14 @@
     <string name="correo_electronico">Correo Electrónico:</string>
     <string name="validar">Validar</string>
     <string name="seleccion_de_fecha">Selección de fecha</string>
-    <string name="Calendario">TODO</string>
+    <string name="Calendario">Calendario</string>
+    <string name="nombreError">"Campo de nombre vacío "</string>
+    <string name="numero_cuentaError">Campo vacío del numero de cuenta</string>
+    <string name="numero_cuentaError2">Se requieren 9 digitos para el numero de cuenta</string>
+    <string name="correo_electronicoError">Campo de correo vacío</string>
+    <string name="correo_electronicoError2">Correo no valido</string>
+    <string name="fechaError">"Aun no estamos en ese año "</string>
+    <string name="Saludo">"¡Hola! "</string>
+    <string name="txtCorreo1">Tu correo es:</string>
+    <string name="edadtxt">Tu edad es:</string>
 </resources>

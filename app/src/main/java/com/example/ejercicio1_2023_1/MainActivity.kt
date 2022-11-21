@@ -1,5 +1,6 @@
 package com.example.ejercicio1_2023_1
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +19,13 @@ class MainActivity : AppCompatActivity() {
     var txtFecha:EditText?=null
     var btnFecha:ImageButton?=null
     var dpFecha:DatePicker?=null
+
+    var validacionName: Boolean = false
+    var validacionNoCuenta: Boolean = false
+    var validacionFecha: Boolean = false
+    var validacionCorreo: Boolean = false
+
+    val parametros = Bundle()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -49,35 +57,62 @@ class MainActivity : AppCompatActivity() {
         if (binding.ETNombre.text.isNotEmpty()){
             val nombre = binding.ETNombre.text.toString()
             Toast.makeText(this@MainActivity,"Campo de nombre correcto",Toast.LENGTH_SHORT).show()
+            validacionName = true
         }
         else{
-            Toast.makeText(this@MainActivity,"Campo de nombre vacio",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity,"Campo de nombre vacio",Toast.LENGTH_SHORT).show()
+            binding.ETNombre.error = getString(R.string.nombreError)
+            validacionName = false
         }
 
         if (binding.etnNoDeCuenta.text.isNotEmpty()){
             val numeroCuenta = binding.etnNoDeCuenta.text.toString()
             if (noCuenta(numeroCuenta)) {
                 Toast.makeText(this@MainActivity,"No de cuenta valido",Toast.LENGTH_SHORT).show()
+                validacionNoCuenta = true
             }
         }
         else{
-            Toast.makeText(this@MainActivity,"Campo del No. de cuenta vacio",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity,"Campo del No. de cuenta vacio",Toast.LENGTH_SHORT).show()
+            binding.etnNoDeCuenta.error = getString(R.string.numero_cuentaError)
+            validacionNoCuenta = false
         }
 
         if (binding.ETCorreo.text.isNotEmpty()){
             val correo = binding.ETCorreo.text.toString()
             if (Correo(correo)){
                 Toast.makeText(this@MainActivity,"Correo valido",Toast.LENGTH_SHORT).show()
+                validacionCorreo = true
             }
         }
         else{
-            Toast.makeText(this@MainActivity,"Campo de correo vacio",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity,"Campo de correo vacio",Toast.LENGTH_SHORT).show()
+            binding.ETCorreo.error = getString(R.string.correo_electronicoError)
+            validacionCorreo = false
         }
 
         if (Fecha()){
             Toast.makeText(this@MainActivity,"Fecha Correcta", Toast.LENGTH_SHORT).show()
+            validacionFecha = true
         }else{
             Toast.makeText(this@MainActivity,"Fecha Incorrecta", Toast.LENGTH_SHORT).show()
+            //binding.txtFecha.error = getString(R.string.fechaError)
+            validacionFecha = false
+        }
+
+        if (validacionName == true && validacionCorreo == true && validacionFecha == true && validacionNoCuenta == true){
+            val intent = Intent(this, Resultado::class.java)
+
+
+
+            parametros.putString("Nombre",binding.ETNombre.text.toString())
+            parametros.putString("Correo",binding.ETCorreo.text.toString())
+            parametros.putString("noCuenta", binding.etnNoDeCuenta.text.toString())
+            parametros.putString("Fecha", binding.txtFecha.text.toString())
+
+            intent.putExtras(parametros)
+
+            startActivity(intent)
         }
 
     }
@@ -89,7 +124,9 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         else {
-            Toast.makeText(this@MainActivity, "El número de cuenta no tiene 9 digitos",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity, "El número de cuenta no tiene 9 digitos",Toast.LENGTH_SHORT).show()
+            binding.etnNoDeCuenta.error = getString(R.string.numero_cuentaError2)
+            validacionNoCuenta = false
             return false
         }
     }
@@ -100,7 +137,9 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         else {
-            Toast.makeText(this@MainActivity, "El correo no tiene un formato valido",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity, "El correo no tiene un formato valido",Toast.LENGTH_SHORT).show()
+            binding.ETCorreo.error = getString(R.string.correo_electronicoError2)
+            validacionCorreo = false
             return false
         }
     }
@@ -118,7 +157,11 @@ class MainActivity : AppCompatActivity() {
 
         val fecha1 = txtFecha?.text.toString().split(delim)
 
-        //Toast.makeText(this@MainActivity,fecha1.toString(),Toast.LENGTH_LONG).show()
+        val edad = fecha2[0].toInt() - fecha1[2].toInt()
+
+        parametros.putString("Edad", edad.toString())
+
+        //Toast.makeText(this@MainActivity,edad.toString(),Toast.LENGTH_LONG).show()
 
         return fecha1[2] <= fecha2[0]
 
